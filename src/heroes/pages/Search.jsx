@@ -1,7 +1,8 @@
 import { Navbar } from "../../ui/Components/Navbar";
-export const DC = () => (
+
+export const Search = () => (
   <>
     <Navbar />
-    <h1>DC</h1>
+    <h1>Search</h1>
   </>
 );

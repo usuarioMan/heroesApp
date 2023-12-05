@@ -1,3 +1,10 @@
+import { Navbar } from "../../ui/Components/Navbar";
 export const Marvel = () => {
-  return <div>Marvel</div>;
+  return (
+    <>
+      <Navbar />
+
+      <h1>Marvel</h1>
+    </>
+  );
 };
