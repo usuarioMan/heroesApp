@@ -3,12 +3,18 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import logoEscudo from "../../assets/logo-escudo.png";
 import userProfile from "../../assets/user-profile.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 export const Navbar = () => {
+  const navigate = useNavigate();
+
+  const onLogout = () => {
+    navigate("/login", { replace: true });
+  };
+
   return (
     <Disclosure as="nav" className="bg-white shadow">
       {({ open }) => (
@@ -99,15 +105,15 @@ export const Navbar = () => {
                       <Menu.Item>
                         {/* TODO: Esto se tiene que configurar correctamente con un Router especial */}
                         {({ active }) => (
-                          <a
-                            href="#"
+                          <p
+                            onClick={onLogout}
                             className={classNames(
                               active ? "bg-gray-100" : "",
                               "block px-4 py-2 text-sm text-gray-700"
                             )}
                           >
                             Logout
-                          </a>
+                          </p>
                         )}
                       </Menu.Item>
                     </Menu.Items>
