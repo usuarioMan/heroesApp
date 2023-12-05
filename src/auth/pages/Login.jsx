@@ -1,4 +1,4 @@
-import { Navbar } from "../../ui/Components/Navbar";
+import { Navbar } from "../../ui/";
 export const Login = () => (
   <>
     <Navbar />

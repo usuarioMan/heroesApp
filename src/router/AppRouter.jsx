@@ -1,8 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import { Marvel } from "../heroes/pages/Marvel";
-import { DC } from "../heroes/pages/DC";
-import { Login } from "../auth/pages/Login";
-import { Search } from "../heroes/pages/Search";
+import { Marvel, DC, Search } from "../heroes";
+import { Login } from "../auth";
 
 export const AppRouter = () => {
   return (
