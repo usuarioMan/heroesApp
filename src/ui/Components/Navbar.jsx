@@ -28,16 +28,17 @@ export const Navbar = () => {
                 </Disclosure.Button>
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex flex-shrink-0 items-center">
+                <NavLink className="flex flex-shrink-0 items-center" to={"/"}>
                   <img
-                    className="h-8 w-auto"
+                    className="h-8 w-auto transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
                     src={logoEscudo}
                     alt="Heros App icon"
                   />
                   <span className="ml-2 text-xl font-hero text-black">
                     Heros
                   </span>
-                </div>
+                </NavLink>
+
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                   <NavLink
                     to="/marvel"
