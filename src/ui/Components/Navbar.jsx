@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import logoEscudo from "../../assets/logo-escudo.png";
-import userProfile from "../../assets/user-profile.png";
+import logoEscudo from "../../../assets/logo-escudo.png";
+import userProfile from "../../../assets/user-profile.png";
 import { NavLink, useNavigate } from "react-router-dom";
 
 function classNames(...classes) {

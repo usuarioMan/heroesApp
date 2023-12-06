@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         hero: ["Staatliches", "sans-serif"],
+        heroText: ["Barlow Condensed", "sans-serif"],
       },
     },
   },
