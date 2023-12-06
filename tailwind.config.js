@@ -5,9 +5,12 @@ export default {
     extend: {
       fontFamily: {
         hero: ["Staatliches", "sans-serif"],
-        heroText: ["Barlow Condensed", "sans-serif"],
+        "hero-text": ["Barlow Condensed", "sans-serif"],
       },
     },
   },
-  plugins: [require("@headlessui/tailwindcss")],
+  plugins: [
+    require("@headlessui/tailwindcss"),
+    require("@tailwindcss/aspect-ratio"),
+  ],
 };
