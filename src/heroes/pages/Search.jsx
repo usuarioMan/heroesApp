@@ -1,5 +1,6 @@
+import { SearchBar } from "../../ui/Components/Searchbar";
 export const Search = () => (
   <>
-    <h1>Search</h1>
+    <SearchBar></SearchBar>
   </>
 );

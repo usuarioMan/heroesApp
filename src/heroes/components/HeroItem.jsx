@@ -9,7 +9,10 @@ export const HeroItem = ({
 }) => {
   const heroImage = `/assets/${id}.jpg`;
   return (
-    <li key={id} className="col-span-1 rounded-lg bg-white shadow-xl">
+    <li
+      key={id}
+      className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white  shadow animate-fadeInUp"
+    >
       <div className="flex flex-1 h-full">
         <div className="flex-1/3">
           <img

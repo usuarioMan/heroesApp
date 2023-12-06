@@ -1,15 +1,8 @@
 import { HeroItem } from "./HeroItem";
 import { getHeroesByPublisher } from "../helpers";
-/* {
-    id: "dc-batman",
-    superhero: "Batman",
-    publisher: "DC Comics",
-    alter_ego: "Bruce Wayne",
-    first_appearance: "Detective Comics #27",
-    characters: "Bruce Wayne",
-  } */
+import { useMemo } from "react";
 export const HeroList = ({ publisher }) => {
-  const heroes = getHeroesByPublisher(publisher);
+  const heroes = useMemo(() => getHeroesByPublisher(publisher), [publisher]);
   return (
     <>
       <ul
