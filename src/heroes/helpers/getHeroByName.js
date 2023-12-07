@@ -15,6 +15,10 @@ export const getHeroByName = (name) => {
   // Convertir el nombre a minúsculas para hacer la búsqueda sin distinción entre mayúsculas y minúsculas
   const lowerCaseName = name.toLowerCase();
 
+  if (lowerCaseName === "all") {
+    return heroes;
+  }
+
   // Filtrar los héroes cuyo nombre coincida (sin distinción entre mayúsculas y minúsculas)
   const matchingHeroes = heroes.filter((hero) =>
     hero.superhero.toLowerCase().includes(lowerCaseName)
