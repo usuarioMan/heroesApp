@@ -1,9 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import superheroImage from "../../../assets/heros-bakground.jpg";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 export const Login = () => {
+  const { onLogin } = useContext(AuthContext);
   const navigate = useNavigate();
-  const onLogin = () => {
+  const onClickLogin = () => {
+    onLogin("rodrigo");
     navigate("/marvel", { replace: true });
   };
   return (
@@ -28,7 +32,7 @@ export const Login = () => {
           <button
             type="button"
             className="bg-indigo-600 hover:bg-indigo-500 py-2 px-4 rounded-md transition duration-300 focus:outline-none focus:ring focus:border-indigo-700"
-            onClick={onLogin}
+            onClick={onClickLogin}
           >
             Login
           </button>

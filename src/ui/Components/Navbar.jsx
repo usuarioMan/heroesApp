@@ -1,16 +1,17 @@
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import logoEscudo from "../../../assets/logo-escudo.png";
 import userProfile from "../../../assets/user-profile.png";
 import { NavLink, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../auth/context/AuthContext";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 export const Navbar = () => {
+  const { user } = useContext(AuthContext);
   const navigate = useNavigate();
-
   const onLogout = () => {
     navigate("/login", { replace: true });
   };
@@ -102,6 +103,18 @@ export const Navbar = () => {
                     leaveTo="transform opacity-0 scale-95"
                   >
                     <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <Menu.Item>
+                        {({ active }) => (
+                          <p
+                            className={classNames(
+                              active ? "bg-gray-100" : "",
+                              "block px-4 py-2 text-sm text-gray-700"
+                            )}
+                          >
+                            {`${user}'s profile.`}
+                          </p>
+                        )}
+                      </Menu.Item>
                       <Menu.Item>
                         {/* TODO: Esto se tiene que configurar correctamente con un Router especial */}
                         {({ active }) => (
