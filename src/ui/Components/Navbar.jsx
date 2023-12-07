@@ -10,9 +10,10 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 export const Navbar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, onLogout } = useContext(AuthContext);
   const navigate = useNavigate();
-  const onLogout = () => {
+  const onClickLogout = () => {
+    onLogout();
     navigate("/login", { replace: true });
   };
 
@@ -119,7 +120,7 @@ export const Navbar = () => {
                         {/* TODO: Esto se tiene que configurar correctamente con un Router especial */}
                         {({ active }) => (
                           <p
-                            onClick={onLogout}
+                            onClick={onClickLogout}
                             className={classNames(
                               active ? "bg-gray-100" : "",
                               "block px-4 py-2 text-sm text-gray-700"

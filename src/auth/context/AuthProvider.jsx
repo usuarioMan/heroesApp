@@ -23,8 +23,16 @@ export const AuthProvider = ({ children }) => {
     dispatch(action);
   };
 
+  const onLogout = () => {
+    localStorage.removeItem("user");
+    const action = {
+      type: TYPES.LOGOUT,
+    };
+    dispatch(action);
+  };
+
   return (
-    <AuthContext.Provider value={{ ...authState, onLogin }}>
+    <AuthContext.Provider value={{ ...authState, onLogin, onLogout }}>
       {children}
     </AuthContext.Provider>
   );
