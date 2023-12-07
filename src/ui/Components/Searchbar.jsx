@@ -16,7 +16,7 @@ export const SearchBar = ({ onSubmitNavigateTo }) => {
         className="absolute inset-0 bg-cover bg-center opacity-80"
         style={{ backgroundImage: `url(${searchBackground})` }}
       ></div>
-      <div className="flex items-center justify-center h-full relative z-10">
+      <div className="flex items-center justify-center h-full relative z-0">
         {/* Barra de búsqueda */}
         <div className="relative w-full max-w-md">
           <form onSubmit={onSearchSubmit}>
